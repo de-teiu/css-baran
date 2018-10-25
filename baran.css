@@ -1,0 +1,137 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.container {
+    height: calc(100% - 50px);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/** バラン要素の親 */
+.content-baran {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+/** バラン左端・上部 */
+.content-baran .baran:first-child {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 80px 0 0 20px;
+    border-color: transparent transparent transparent #258945;
+    border-right-color: rgba(255, 255, 255, 0);
+    background-image: repeating-linear-gradient(
+        90deg,
+        #444,
+        #444 10px,
+        #888 0,
+        #888 20px
+    );
+    margin-top: 0px;
+}
+/** バラン左端・下部 */
+.content-baran .baran:first-child:after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 50px;
+    background: #258945;
+    top: 0px;
+    left: -20px;
+    position: relative;
+}
+/** バラン右端・上部 */
+.content-baran .baran:last-child {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 80px 20px;
+    border-color: transparent transparent #258945 transparent;
+    margin-top: 0px;
+}
+/** バラン右端・下部 */
+.content-baran .baran:last-child:after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 50px;
+    background: #258945;
+    top: 80px;
+    left: -20px;
+    position: relative;
+}
+/** バラン中央(3-1)・上部 */
+.content-baran
+    .baran:not(:first-child):nth-child(3n).baran:not(:last-child):nth-child(3n) {
+    margin-top: 10px;
+    width: 0px;
+    height: 0px;
+    background: transparent;
+    border-bottom: 50px solid #258945;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+/** バラン中央(3-2)・上部 */
+.content-baran
+    .baran:not(:first-child):nth-child(3n
+        + 1).baran:not(:last-child):nth-child(3n + 1) {
+    margin-top: 30px;
+    width: 0px;
+    height: 0px;
+    background: transparent;
+    border-bottom: 50px solid #258945;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+/** バラン中央(3-3)・上部 */
+.content-baran
+    .baran:not(:first-child):nth-child(3n
+        + 2).baran:not(:last-child):nth-child(3n + 2) {
+    margin-top: 25px;
+    width: 0px;
+    height: 0px;
+    background: transparent;
+    border-bottom: 50px solid #258945;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+/** バラン中央(3-1)・下部 */
+.baran:nth-child(3n):after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 70px;
+    background: #258945;
+    top: 50px;
+    left: -10px;
+    position: relative;
+}
+/** バラン中央(3-2)・下部 */
+.baran:nth-child(3n + 1):after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 50px;
+    background: #258945;
+    top: 50px;
+    left: -10px;
+    position: relative;
+}
+/** バラン中央(3-3)・下部 */
+.baran:nth-child(3n + 2):after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 55px;
+    background: #258945;
+    top: 50px;
+    left: -10px;
+    position: relative;
+}
